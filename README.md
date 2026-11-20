@@ -8,7 +8,7 @@
 
 *Created by **Adriano Dias Moraes***
 
-[![Latest Release](https://img.shields.io/badge/Release-v0.1.0-00E5B0?style=for-the-badge)](releases/v0.1.0/dx-zero_0.1.0-m5stack1_arm64.deb)
+[![Latest Release](https://img.shields.io/badge/Release-v0.1.1-00E5B0?style=for-the-badge)](releases/v0.1.1/dx-zero_0.1.1-m5stack1_arm64.deb)
 [![Platform](https://img.shields.io/badge/Platform-M5Stack%20CardputerZero%20(ARM64)-FF6B2B?style=for-the-badge)](#installation)
 [![Changelog](https://img.shields.io/badge/Changelog-CHANGELOG.md-FFB020?style=for-the-badge)](CHANGELOG.md)
 
@@ -31,6 +31,7 @@ Play it **100% standalone** right out of your pocket using the CardputerZero's b
 
 | Version | Release Date | Package (ARM64 Debian) | Checksum | Notes |
 |---|---|---|---|---|
+| **`v0.1.1`** | 2026-11-20 | [`dx-zero_0.1.1-m5stack1_arm64.deb`](releases/v0.1.1/dx-zero_0.1.1-m5stack1_arm64.deb) | [`SHA256SUMS.txt`](releases/v0.1.1/SHA256SUMS.txt) | Per-instrument Expression recording & 50/65/75/50 default ADSR — see [CHANGELOG.md](CHANGELOG.md) |
 | **`v0.1.0`** | 2026-11-20 | [`dx-zero_0.1.0-m5stack1_arm64.deb`](releases/v0.1.0/dx-zero_0.1.0-m5stack1_arm64.deb) | [`SHA256SUMS.txt`](releases/v0.1.0/SHA256SUMS.txt) | Initial public release — see [CHANGELOG.md](CHANGELOG.md) |
 
 ---
@@ -42,20 +43,20 @@ No compiler or build tools required. Install the prebuilt ARM64 `.deb` package d
 ### Option 1: Install Directly on CardputerZero
 Download the `.deb` package to your CardputerZero and run:
 ```bash
-sudo apt install -y ./dx-zero_0.1.0-m5stack1_arm64.deb
+sudo apt install -y ./dx-zero_0.1.1-m5stack1_arm64.deb
 ```
 
 ### Option 2: Install Remotely Over SSH (from macOS / Linux / Windows)
 ```bash
-scp releases/v0.1.0/dx-zero_0.1.0-m5stack1_arm64.deb <user>@<cardputer-ip>:/tmp/
-ssh <user>@<cardputer-ip> "sudo apt install -y /tmp/dx-zero_0.1.0-m5stack1_arm64.deb"
+scp releases/v0.1.1/dx-zero_0.1.1-m5stack1_arm64.deb <user>@<cardputer-ip>:/tmp/
+ssh <user>@<cardputer-ip> "sudo apt install -y /tmp/dx-zero_0.1.1-m5stack1_arm64.deb"
 ```
 
 After installation, **DX Zero** appears automatically in the CardputerZero **`APPLaunch`** launcher with its custom icon.
 
 ### Verify Package Integrity (Optional)
 ```bash
-cd releases/v0.1.0
+cd releases/v0.1.1
 sha256sum -c SHA256SUMS.txt
 ```
 

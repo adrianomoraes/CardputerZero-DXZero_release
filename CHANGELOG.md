@@ -12,6 +12,23 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ---
 
+## [0.1.1] — 2026-11-20
+
+**Package:** [`releases/v0.1.1/dx-zero_0.1.1-m5stack1_arm64.deb`](releases/v0.1.1/dx-zero_0.1.1-m5stack1_arm64.deb)
+**Checksums:** [`releases/v0.1.1/SHA256SUMS.txt`](releases/v0.1.1/SHA256SUMS.txt)
+**Target:** M5Stack CardputerZero (`arm64`, `APPLaunch`, LVGL 9.5, `320×170`)
+
+### Changed
+- **Per-Instrument Expression Recording (`EXP` Tab)**:
+  - Expression parameters (**Attack**, **Decay**, **Sustain**, **Release**, **Velocity Sensitivity & Curve**, **Aftertouch Depth & Destination**, **Mod Wheel Type / Wave / Speed / Amplitude**, and **Pitch Bend Range**) are now **recorded and recalled independently per instrument (per patch)** instead of being shared globally across all instruments.
+  - Multi-track sequences (`FM1`, `FM2`, `FM3`) now render each track simultaneously with its own instrument's expression profile.
+  - Per-bank expression profiles are automatically persisted alongside `.syx` banks under `~/.config/cardputerzero-dxzero/expr/*.dxzexp` while keeping `.syx` cartridges 100% standard 4104-byte Yamaha DX7 / Dexed compatible.
+  - The `EXP` tab header badge now displays the active instrument's name so it is always clear which patch's expression is being edited.
+- **Updated Default ADSR Envelope**:
+  - Changed default ADSR values across all patches to **Attack `50%`**, **Decay `65%`**, **Sustain `75%`**, and **Release `50%`**.
+
+---
+
 ## [0.1.0] — 2026-11-20
 
 **Package:** [`releases/v0.1.0/dx-zero_0.1.0-m5stack1_arm64.deb`](releases/v0.1.0/dx-zero_0.1.0-m5stack1_arm64.deb)
