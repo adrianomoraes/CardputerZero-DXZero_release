@@ -77,7 +77,7 @@ sudo apt remove dx-zero
 - **Dedicated Expression Engine (`EXP` Tab)**: Global ADSR, Velocity Sensitivity & Curve, Aftertouch Depth & Destination, Sustain Pedal (`CC 64`), Pitch Bend Range (`±1..12` semi), and a multi-mode Expressive Mod Wheel LFO (`VIB / TREM / WAH / FILT / V+T / ALL`, 6 waveforms, `0.2–18.0 Hz`).
 - **8-Voice FM Drum Synthesizer**: `KICK`, `SNARE`, `CLAP`, `CHat`, `OHat`, `TOM-L`, `TOM-H`, `PERC`.
 
-### 4-Track ORBIT + SLOOP Groovebox Sequencer (`SEQ` Tab)
+### 4-Trac Groovebox Sequencer (`SEQ` Tab)
 - **4 Independent Tracks**: `FM1`, `FM2`, `FM3` (each with its own DX7 patch!) + `DRM` (8-part FM percussion).
 - **4 Dedicated Views** (cycle with **`V`**):
   - **`PLY`**: 4-track color-coded live performance view showing real-time playheads, active sounding notes/drums, on-screen transport (`PLAY / REC / FILL / PAT / BPM`), and standalone CardputerZero playable keys.
