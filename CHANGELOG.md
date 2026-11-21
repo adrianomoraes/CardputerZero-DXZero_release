@@ -103,6 +103,6 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## Release Versioning Convention
 
-Each release is published under `releases/vX.Y.Z/` containing:
+Each release is published under `releases/vX.Y.Z/` alongside updated root documentation (`README.md`, `MANUAL.md`, and `CHANGELOG.md`):
 - `dx-zero_X.Y.Z-m5stack1_arm64.deb` — Prebuilt ARM64 Debian package for M5Stack CardputerZero.
 - `SHA256SUMS.txt` — Verified SHA-256 package checksum.

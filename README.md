@@ -10,6 +10,7 @@
 
 [![Latest Release](https://img.shields.io/badge/Release-v0.2.0-00E5B0?style=for-the-badge)](releases/v0.2.0/dx-zero_0.2.0-m5stack1_arm64.deb)
 [![Platform](https://img.shields.io/badge/Platform-M5Stack%20CardputerZero%20(ARM64)-FF6B2B?style=for-the-badge)](#installation)
+[![Manual](https://img.shields.io/badge/User%20Manual-MANUAL.md-00D4FF?style=for-the-badge)](MANUAL.md)
 [![Changelog](https://img.shields.io/badge/Changelog-CHANGELOG.md-FFB020?style=for-the-badge)](CHANGELOG.md)
 
 </div>
@@ -132,5 +133,6 @@ scp your_bank.syx <user>@<cardputer-ip>:~/.config/cardputerzero-dxzero/banks/
 
 ## Support & Feedback
 
+- Read the complete step-by-step **[Operating Manual (`MANUAL.md`)](MANUAL.md)** (updated with every release).
 - See [CHANGELOG.md](CHANGELOG.md) for the complete version-by-version release history.
 - Please open an issue on this repository to report bugs, share controller compatibility notes, or request features.
