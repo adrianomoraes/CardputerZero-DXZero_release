@@ -8,7 +8,7 @@
 
 *Created by **Adriano Dias Moraes***
 
-[![Latest Release](https://img.shields.io/badge/Release-v0.2.0-00E5B0?style=for-the-badge)](releases/v0.2.0/dx-zero_0.2.0-m5stack1_arm64.deb)
+[![Latest Release](https://img.shields.io/badge/Release-v0.2.1-00E5B0?style=for-the-badge)](releases/v0.2.1/dx-zero_0.2.1-m5stack1_arm64.deb)
 [![Platform](https://img.shields.io/badge/Platform-M5Stack%20CardputerZero%20(ARM64)-FF6B2B?style=for-the-badge)](#installation)
 [![Manual](https://img.shields.io/badge/User%20Manual-MANUAL.md-00D4FF?style=for-the-badge)](MANUAL.md)
 [![Changelog](https://img.shields.io/badge/Changelog-CHANGELOG.md-FFB020?style=for-the-badge)](CHANGELOG.md)
@@ -32,6 +32,7 @@ Play it **100% standalone** right out of your pocket using the CardputerZero's b
 
 | Version | Release Date | Package (ARM64 Debian) | Checksum | Notes |
 |---|---|---|---|---|
+| **`v0.2.1`** | 2026-11-21 | [`dx-zero_0.2.1-m5stack1_arm64.deb`](releases/v0.2.1/dx-zero_0.2.1-m5stack1_arm64.deb) | [`SHA256SUMS.txt`](releases/v0.2.1/SHA256SUMS.txt) | 8 bundled classic 808/909 `.wav` drum samples, full `SEQ` `K3` rotary control & streamlined `SMP` editor — see [CHANGELOG.md](CHANGELOG.md) |
 | **`v0.2.0`** | 2026-11-21 | [`dx-zero_0.2.0-m5stack1_arm64.deb`](releases/v0.2.0/dx-zero_0.2.0-m5stack1_arm64.deb) | [`SHA256SUMS.txt`](releases/v0.2.0/SHA256SUMS.txt) | Hybrid FM Drum & WAV Sampler (`SEQ → SMP`), `Esc` MIDI Panic, top-velocity FM fix, `DRM` `Seq Mix` & `Pad Ch`/`Base` — see [CHANGELOG.md](CHANGELOG.md) |
 | **`v0.1.1`** | 2026-11-20 | [`dx-zero_0.1.1-m5stack1_arm64.deb`](releases/v0.1.1/dx-zero_0.1.1-m5stack1_arm64.deb) | [`SHA256SUMS.txt`](releases/v0.1.1/SHA256SUMS.txt) | Per-instrument Expression recording & 50/65/75/50 default ADSR — see [CHANGELOG.md](CHANGELOG.md) |
 | **`v0.1.0`** | 2026-11-20 | [`dx-zero_0.1.0-m5stack1_arm64.deb`](releases/v0.1.0/dx-zero_0.1.0-m5stack1_arm64.deb) | [`SHA256SUMS.txt`](releases/v0.1.0/SHA256SUMS.txt) | Initial public release — see [CHANGELOG.md](CHANGELOG.md) |
@@ -45,20 +46,20 @@ No compiler or build tools required. Install the prebuilt ARM64 `.deb` package d
 ### Option 1: Install Directly on CardputerZero
 Download the `.deb` package to your CardputerZero and run:
 ```bash
-sudo apt install -y ./dx-zero_0.2.0-m5stack1_arm64.deb
+sudo apt install -y ./dx-zero_0.2.1-m5stack1_arm64.deb
 ```
 
 ### Option 2: Install Remotely Over SSH (from macOS / Linux / Windows)
 ```bash
-scp releases/v0.2.0/dx-zero_0.2.0-m5stack1_arm64.deb <user>@<cardputer-ip>:/tmp/
-ssh <user>@<cardputer-ip> "sudo apt install -y /tmp/dx-zero_0.2.0-m5stack1_arm64.deb"
+scp releases/v0.2.1/dx-zero_0.2.1-m5stack1_arm64.deb <user>@<cardputer-ip>:/tmp/
+ssh <user>@<cardputer-ip> "sudo apt install -y /tmp/dx-zero_0.2.1-m5stack1_arm64.deb"
 ```
 
 After installation, **DX Zero** appears automatically in the CardputerZero **`APPLaunch`** launcher with its custom icon.
 
 ### Verify Package Integrity (Optional)
 ```bash
-cd releases/v0.2.0
+cd releases/v0.2.1
 sha256sum -c SHA256SUMS.txt
 ```
 
@@ -86,7 +87,7 @@ sudo apt remove dx-zero
   - **`GRD`**: 16-step × 4-page (64-step) visual pattern editor across Patterns `A–D`.
   - **`STP`**: Per-step SLOOP sheet with 4-note chords, 4 Force levels (`GHOST / SOFT / NORM / HARD`), Gate/Tie (`1–16`), Ratchets (`1x–4x`), Microtiming Nudge (`-30..+30%`), Slide glide, Fill conditions, Probability, and Parameter Locks.
   - **`CLP`**: ORBIT Lift/Drop clip editing, 8-level Undo/Redo, Section Chaining (`A–D`), per-track Vol/Mute/Len/Div, and **8 Savable Loop Slots** (`Loop 01–08`).
-  - **`SMP`**: **Hybrid FM Drum Editor & On-Device WAV Sampler** — edit FM drum synthesis (`Tune / Decay / Mod / Noise / Gain / Choke`) OR load/record 16-bit `.wav` samples via internal **Synth Resampling** or **Microphone/Line-In Capture**, with a 48-bar visual waveform graph and `Start / End` cut & crop!
+  - **`SMP`**: **Hybrid FM Drum Editor & WAV Sampler** — edit FM drum synthesis (`Tune / Decay / Mod / Noise / Gain / Choke`) OR play the **8 bundled classic 808/909 `.wav` drum samples** (plus your own 16-bit `.wav` files in `~/.config/cardputerzero-dxzero/samples/`), with a 48-bar visual waveform graph, `Start / End` cut & crop, Pitch, and Gain!
 - **Master FX & Punch-In Effects (`FX` Tab)**: State-Variable Filter (`LP / HP / BP`), Stereo Chorus, Tempo-Synced Ping-Pong Delay, 4 OP-style Punch-In FX (`Stutter`, `Tape Stop`, `Bitcrush`, `HP Sweep`), and a smooth stereo bus limiter.
 - **Independent Sequencer & Keyboard Volume Mix (`AUD` Tab)**: Balance **`Seq Mix`** and **`Key Mix`** independently so you can jam live over running loops.
 

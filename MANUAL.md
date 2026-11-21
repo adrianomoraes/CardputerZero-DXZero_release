@@ -1,6 +1,6 @@
 # CardputerZero DX Zero — Complete Operating Manual
 
-**Version:** `0.2.0` | **Platform:** M5Stack CardputerZero (`320×170` LVGL 9.5) | **Author:** Adriano Dias Moraes
+**Version:** `0.2.1` | **Platform:** M5Stack CardputerZero (`320×170` LVGL 9.5) | **Author:** Adriano Dias Moraes
 
 > **[IMAGE PLACEHOLDER: `docs/images/manual-cover.jpg`]**
 > *Replace with a close-up photo of CardputerZero running DX Zero on the `PLY` dashboard.*
@@ -216,19 +216,12 @@ Select **`Source` → `FM SYNTH`** to shape the built-in percussion synthesizer 
 - **`FM Noise`** (`0% .. 100%`): Blend crisp high-passed noise snap/sizzle.
 - **`Pad Gain`** (`0% .. 150%`) & **`Choke Grp`** (`ON/OFF` — e.g. Closed Hat cuts Open Hat).
 
-#### Mode B: `WAV SAMPLE` (Import, Graph-Trim, Resample Synth & Record Mic)
+#### Mode B: `WAV SAMPLE` (Import, Visual Waveform Cutting, Pitch & Gain)
 1. **Load External `.wav` Samples**:
    - Copy any 16-bit PCM mono or stereo `.wav` files (up to 3 seconds each) to `~/.config/cardputerzero-dxzero/samples/` via `scp`.
-   - Select **`Source` → `WAV SAMPLE`**, highlight **`WAV File`**, and use **`Z` / `C`** to browse & audition your samples immediately!
-2. **Record Directly From DX Zero's FM Synth (`Rec Synth`)**:
-   - Highlight **`Rec Synth`** and press **`Enter`** — the header turns red (`REC SYNTH...`).
-   - Play any DX7 note, chord, or FX sound on your MIDI keyboard (or CardputerZero). Press **`Enter`** again to stop early (or let it auto-finish at 2.5 s).
-   - DX Zero automatically trims leading/trailing silence, normalizes cleanly, assigns the sample to the pad, and saves it as `~/.config/cardputerzero-dxzero/samples/synth_padX.wav`!
-3. **Record From Microphone / USB Audio Input (`Rec Mic`)**:
-   - Highlight **`Rec Mic`** and press **`Enter`** — the waveform header displays the live input level (`REC MIC xx%`) from CardputerZero's built-in mic (`ES8389-Audio`) or your connected USB audio interface.
-   - Beatbox, tap, or sample an external instrument, then press **`Enter`** to stop — auto-trimmed, normalized, loaded onto the pad, and saved as `mic_padX.wav`!
-4. **Visual Waveform Cutting & Cropping**:
-   - Adjust **`Start Cut`** (teal vertical cursor) and **`End Cut`** (magenta vertical cursor) with **`Z` / `C`** while watching the 48-bar waveform graph highlight the active region in bright orange.
+   - Select **`Source` → `WAV SAMPLE`**, highlight **`WAV File`**, and use **`Z` / `C`** (or `K3` in `NAV` mode) to browse & audition your samples immediately!
+2. **Visual Waveform Cutting & Cropping**:
+   - Adjust **`Start Cut`** (teal vertical cursor) and **`End Cut`** (magenta vertical cursor) with **`Z` / `C`** (or `K3`) while watching the 48-bar waveform graph highlight the active region in bright orange.
    - Highlight **`Crop/Save`** and press **`Enter`** to destructively crop the sample to `[Start..End]` (with automatic anti-click edge fades) and save the updated `.wav` file!
    - Shape **`Pitch`** (`-12..+12` semi) and **`Pad Gain`** (`0..150%`), then press **`S`** on `MID` (or exit cleanly) to save your entire 8-pad hybrid kit to `drum_kit.cfg`.
 
@@ -398,7 +391,7 @@ Restart DX Zero — every `.syx` file appears under **`DX7 Bank`**!
 All user data is stored cleanly under `~/.config/cardputerzero-dxzero/`:
 - `~/.config/cardputerzero-dxzero/banks/*.syx` — Your custom & imported 32-voice DX7 `.syx` banks.
 - `~/.config/cardputerzero-dxzero/expr/*.dxzexp` — Per-instrument Expression profiles (`ADSR`, `Vel`, `AT`, `ModWheel`, `BendRng`) recorded per bank.
-- `~/.config/cardputerzero-dxzero/samples/*.wav` — Imported, synth-resampled (`synth_padX.wav`), and mic-recorded (`mic_padX.wav`) 16-bit PCM drum samples.
+- `~/.config/cardputerzero-dxzero/samples/*.wav` — Imported & cropped 16-bit PCM `.wav` drum samples.
 - `~/.config/cardputerzero-dxzero/drum_kit.cfg` — Saved 8-pad hybrid FM Drum & WAV Sampler kit configuration.
 - `~/.config/cardputerzero-dxzero/loops/loop_01..08.dxzloop` & `.meta` — Saved programmable multi-track ORBIT+SLOOP loops.
 - `~/.config/cardputerzero-dxzero/midi_map.cfg` — Saved MIDI Learn & Drum Pad Channel/Base bindings (`DXZMIDI3` format).

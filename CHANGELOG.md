@@ -12,6 +12,24 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ---
 
+## [0.2.1] — 2026-11-21
+
+**Package:** [`releases/v0.2.1/dx-zero_0.2.1-m5stack1_arm64.deb`](releases/v0.2.1/dx-zero_0.2.1-m5stack1_arm64.deb)
+**Checksums:** [`releases/v0.2.1/SHA256SUMS.txt`](releases/v0.2.1/SHA256SUMS.txt)
+**Target:** M5Stack CardputerZero (`arm64`, `APPLaunch`, LVGL 9.5, `320×170`)
+
+### Added
+- **8 Bundled Classic 808/909 Drum `.wav` Samples**:
+  - Shipped 8 royalty-free 44.1 kHz 16-bit PCM classic drum samples (`01_808_Kick.wav`, `02_909_Snare.wav`, `03_808_Clap.wav`, `04_808_CHat.wav`, `05_808_OHat.wav`, `06_808_TomLo.wav`, `07_808_TomHi.wav`, `08_808_Cowbell.wav`) installed into `/usr/share/APPLaunch/share/samples/` and auto-preloaded into `P1–P8` so flipping `Source → WAV SAMPLE` in `SEQ → SMP` plays immediately out of the box.
+  - Cropping any read-only bundled sample via `Crop/Save` automatically saves the cropped copy into `~/.config/cardputerzero-dxzero/samples/`.
+- **Full `K3` Rotary Control Across All 5 `SEQ` Sub-Views (`NAV` Mode)**:
+  - Wired `K3` rotary value editing across `PLY` (per-track volume / transport selector), `GRD` (step pitch / drum pad), `STP` (all 12 step sheet parameters), `CLP` (lift length, chain, fill, track vol/mute/len/div, loop slot), and `SMP` (pad, source, WAV file, start/end cut, pitch, gain, and all FM drum synthesis params).
+
+### Changed
+- **Streamlined `SEQ → SMP` View**: Removed experimental on-device audio recording (`Rec Synth` / `Rec Mic`) while keeping all WAV sample loading, 48-bar waveform visualization, `Start Cut` / `End Cut` trimming, `Crop/Save`, `Pitch`, `Pad Gain`, and `FM SYNTH` drum editing intact.
+
+---
+
 ## [0.2.0] — 2026-11-21
 
 **Package:** [`releases/v0.2.0/dx-zero_0.2.0-m5stack1_arm64.deb`](releases/v0.2.0/dx-zero_0.2.0-m5stack1_arm64.deb)
