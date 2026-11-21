@@ -1,6 +1,6 @@
 # CardputerZero DX Zero — Complete Operating Manual
 
-**Version:** `0.2.1` | **Platform:** M5Stack CardputerZero (`320×170` LVGL 9.5) | **Author:** Adriano Dias Moraes
+**Version:** `0.3.0` | **Platform:** M5Stack CardputerZero (`320×170` LVGL 9.5) | **Author:** Adriano Dias Moraes
 
 > **[IMAGE PLACEHOLDER: `docs/images/manual-cover.jpg`]**
 > *Replace with a close-up photo of CardputerZero running DX Zero on the `PLY` dashboard.*
@@ -77,7 +77,7 @@ DX Zero is designed to be operated comfortably right on the CardputerZero's 56-k
 | **`[` / `]`** | Shift CardputerZero Mini-Keyboard octave Down / Up (`C2..C6`) |
 | **`T`** / **`P`** / **`G`** (`SEQ` tab) | Cycle Track (`FM1–FM3/DRM`) / Cycle Pattern (`A–D`) / Toggle **`FILL`** |
 | **`1`–`4`** (`PLY`) / **`1`–`6`** (`FM`) / **`1`–`8`** (`SEQ → SMP`) | Quick-select Track (`FM1–DRM`), Operator (`OP1–OP6`), or Drum Pad (`P1–P8`) |
-| **`F1` – `F4`** | Toggle OP-style Punch-In FX (`Stutter`, `Tape Stop`, `Bitcrush`, `HP Sweep`) |
+| **`F1` – `F4`** | Cycle Live Performance Helpers: **`F1`** Glissando Speed, **`F2`** Auto-Chords, **`F3`** Arpeggiator, **`F4`** Musical Scale |
 | **`Esc` (tap)** | **MIDI Panic (`All Notes Off`)** — immediately silences any stuck notes (or cancels active MIDI Learn / text input) |
 | **`Esc` (hold > 600 ms)** | Save configuration and exit cleanly back to `APPLaunch` |
 
@@ -92,7 +92,9 @@ DX Zero is designed to be operated comfortably right on the CardputerZero's 56-k
 
 The **`PLY`** tab is your main performance view. Every row on the left panel can be navigated with `Up` / `Down`, edited with `Left` / `Right`, and MIDI-Learned with `L`:
 
-- **Row 0 — Track Strip (`FM1`, `FM2`, `FM3`, `DRM`)**: Press `1`–`4` or `Left`/`Right` to select which track your keyboard plays. Each FM track holds its own independent DX7 preset!
+- **Row 0 — Track Strip (`FM0`, `FM1`, `FM2`, `FM3`, `DRM`)**:
+  - **`FM0`** (magenta, default on startup, hotkey **`0`**): **Dedicated Live-Jam Synth Slot** — completely independent of the sequencer! Pick any preset, Expression, and FX on `FM0` to solo/jam live over a running 4-track sequence without touching `FM1–FM3` or accidentally recording over them.
+  - **`FM1`–`FM3`, `DRM`** (hotkeys **`1`–`4`**): The 4 sequencer tracks (each FM track holds its own independent DX7 preset, Expression, and FX!).
 - **Row 1 — Active Preset (`01 E.PIANO 1` .. `32 SPACE BELL`)**: Highlighted by default — press `Left`/`Right` to browse all 32 voices in the current bank.
 - **Row 2 — Bank & Algorithm**: Press `Left`/`Right` (or `[` / `]`) to switch between `DXZ FACTORY` and your custom `.syx` banks.
 - **Rows 3–6 — Live Macro Meters**:
@@ -100,7 +102,11 @@ The **`PLY`** tab is your main performance view. Every row on the left panel can
   - `REL`: Global Envelope Release tail.
   - `CUT`: Master State-Variable Filter cutoff.
   - `FX`: Master Chorus + Delay wet mix.
-- **Right Panel**: Live 24-bar **Oscilloscope**, **Peak VU Meter**, Octave/Arp readout (`A` cycles Arpeggiator modes), and **`2×2` Punch-In FX status pills** (`STUT`, `TAPE`, `CRSH`, `HP`).
+- **Right Panel**: Live 24-bar **Oscilloscope**, **Peak VU Meter**, `SQ/KY` mix readout, and **4 Interactive Performance Helper Pills** (rows 7–10, selectable via `F`/`X` or `K2`, adjusted via `Z`/`C`/`Enter`/`K3` or `F1`–`F4`):
+  - **`G:` Glissando (`OFF / FAST / MED / SLOW / GLID`)**: Smooth pitch glide (`25 ms` .. `450 ms`) between live notes.
+  - **`C:` Auto-Chords (`OFF / MAJ / MIN / MAJ7 / MIN7 / DOM7 / SUS4 / PWR5`)**: Play rich multi-note chords from a single key (scale-aware!).
+  - **`A:` Arpeggiator (`OFF / UP / DOWN / UPDN / RAND`)**: Tempo-synced 1/16th arpeggiator (works on `FM0` Live Jam & `FM1–FM3`; holding 1 key with a Scale active automatically arpeggiates a 4-note scale pattern!).
+  - **`S:` Musical Scale (`CHRM / MAJ / MIN / PNT+ / PNT- / BLUS / DORN / PHRY`)**: Quantizes live playing, Auto-Chords, and Arpeggiator notes cleanly into key.
 - **Built-in QWERTY Mini-Keyboard**: On `PLY`, keys `Z S X D C V G B H N J M ,` play a chromatic octave right from the CardputerZero keyboard! Use `-` / `=` to adjust BPM.
 
 ---
@@ -145,8 +151,8 @@ All real-time performance expression controls live on their own dedicated **`EXP
 | 3 | **`Release`** | `0–100%` (default `50%`) | Per-instrument release tail (`R4`) |
 | 4 | **`VelSens`** | `0–100%` | Global keyboard velocity dynamics (default `85%`, up to `-28 dB` amplitude + FM brightness range) |
 | 5 | **`VelCurv`** | `LIN / SFT / HRD / FIX` | Velocity response curve |
-| 6 | **`AT Dep`** | `0–100%` | Channel / Poly Aftertouch modulation depth |
-| 7 | **`AT Dst`** | `V+B / VIB / BRT / CUT` | Aftertouch destination (Vibrato+Brightness, Vibrato, Brightness, or Filter Cutoff) |
+| 6 | **`AT Dep`** | `0–100%` | Channel / Poly Aftertouch modulation depth (25% strike deadzone + 75 ms smooth attack prevents velocity-127 impact spikes) |
+| 7 | **`AT Dst`** | `V+B / VIB / BRT / CUT` | Aftertouch destination (Vibrato+Brightness, Vibrato, Brightness, or non-destructive per-track Filter Cutoff) |
 | 8 | **`ModType`** | `VIB / TREM / WAH / FILT / V+T / ALL` | **Expressive Mod Wheel destination**: Pitch Vibrato, Amplitude Tremolo, FM Timbre Wah, Master Filter Wobble, Vibrato+Tremolo, or Full Expressive |
 | 9 | **`ModWave`** | `SIN / TRI / SAW- / SAW+ / SQR / S&H` | Mod Wheel LFO waveform |
 | 10 | **`ModSpd`** | `0.2–18.0 Hz` | Mod Wheel LFO speed |
@@ -232,15 +238,17 @@ To jam live on top of a running 4-track loop (including **both FM tracks and `DR
 
 ---
 
-## 7. Tab 5: `FX` — Filter, Chorus, Delay & Punch-In Effects
+## 7. Tab 5: `FX` — Per-Instrument Filter, Chorus, Delay & Punch-In Effects
 
 > **[IMAGE PLACEHOLDER: `docs/images/manual-fx.png`]**
-> *Replace with a screenshot of the `FX` tab showing filter sliders and Punch-In FX rows.*
+> *Replace with a screenshot of the `FX` tab showing the active instrument FX badge, filter sliders, and Punch-In FX rows.*
 
-- **Master State-Variable Filter**: `Filter Mode` (`OFF / LP / HP / BP`), `Cutoff`, `Resonance`.
-- **Stereo Chorus**: `Chorus Mix`, `Chorus Dep` (quadrature stereo modulation).
-- **Tempo-Synced Ping-Pong Delay**: `Delay Mix`, `Delay Fdbk`, `Delay Div` (`1/16`, `1/8`, `3/16` dotted-8th, `1/4`).
-- **Master Bus**: `FX Wet Mix` (global wet macro), `Master Vol` (`0–120%` into the smooth C1 stereo bus limiter).
+Just like Expression (`EXP`), **Filter, Chorus, Delay, and FX Wet Mix are recorded per instrument (per patch)** and saved automatically under `~/.config/cardputerzero-dxzero/expr/*.dxzfx` — the top badge displays which instrument's FX you're editing (`FM0 FX: ...`, `FM1 FX: ...`, etc.), and each FM track (`FM0`, `FM1`, `FM2`, `FM3`) runs its own independent per-track State-Variable Filter!
+
+- **Per-Instrument State-Variable Filter**: `Filter Mode` (`OFF / LP / HP / BP`), `Cutoff`, `Resonance`.
+- **Per-Instrument Stereo Chorus**: `Chorus Mix`, `Chorus Dep` (quadrature stereo modulation).
+- **Per-Instrument Tempo-Synced Ping-Pong Delay**: `Delay Mix`, `Delay Fdbk`, `Delay Div` (`1/16`, `1/8`, `3/16` dotted-8th, `1/4`).
+- **Per-Instrument Wet & Global Master Bus**: `FX Wet Mix` (per-instrument wet macro), `Master Vol` (`0–120%` global bus into the smooth C1 stereo bus limiter).
 - **OP-Style Punch-In FX** (`Enter` or `F1`–`F4` from any tab):
   - **`PNCH Stut`**: Tempo-synced 1/16th beat-repeat stutter loop.
   - **`PNCH Tape`**: Vinyl/tape slowdown pitch drop to zero.

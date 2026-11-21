@@ -12,6 +12,35 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ---
 
+## [0.3.0] — 2026-11-21
+
+**Package:** [`releases/v0.3.0/dx-zero_0.3.0-m5stack1_arm64.deb`](releases/v0.3.0/dx-zero_0.3.0-m5stack1_arm64.deb)
+**Checksums:** [`releases/v0.3.0/SHA256SUMS.txt`](releases/v0.3.0/SHA256SUMS.txt)
+**Target:** M5Stack CardputerZero (`arm64`, `APPLaunch`, LVGL 9.5, `320×170`)
+
+### Added
+- **Dedicated `FM0` Live-Jam Synth Slot**:
+  - Added an independent 4th FM synth slot (**`FM0`**, default on startup, hotkey **`0`** on `PLY`) so you can jam live over running `FM1–FM3` + `DRM` sequences with your own DX7 patch, expression, and per-instrument FX without ever recording into or altering the sequence.
+- **Per-Instrument FX (`PatchFx` + Per-Track Cytomic SVF Filter)**:
+  - Attached FX settings (`Filter Mode / Cutoff / Resonance`, `Chorus Mix / Depth`, `Delay Mix / Feedback / Div`, `FX Wet Mix`) directly to each instrument (`DxPatch::fx`), persisted automatically per bank under `~/.config/cardputerzero-dxzero/expr/*.dxzfx`.
+  - Rendered an independent Cytomic TPT State-Variable Filter per FM track (`FM1`, `FM2`, `FM3`, `FM0`) inside `PolyFmSynth::render()` so each instrument keeps its own filter tone simultaneously.
+- **Live Performance Helpers on `PLY` (`G:` Glissando, `C:` Auto-Chords, `A:` Arpeggiator, `S:` Scales)**:
+  - Replaced the `STUT / TAPE / CRSH / HP` punch pills on `PLY` with 4 live performance helpers (`F1–F4` / rows `7–10`):
+    - **`G:` Glissando**: Smooth buffer-size-independent portamento glide (`OFF`, `FAST` 25 ms, `MED` 90 ms, `SLOW` 220 ms, `GLID` 450 ms).
+    - **`C:` Auto-Chords**: One-finger chord generator (`OFF`, `MAJ`, `MIN`, `MAJ7`, `MIN7`, `DOM7`, `SUS4`, `PWR5`).
+    - **`A:` Arpeggiator**: Sample-accurate **sequencer BPM-locked** arpeggiator (`OFF`, `UP`, `DOWN`, `UPDN`, `RAND`) with phase-preserving accumulator.
+    - **`S:` Scales**: Real-time scale quantizer (`CHRM`, `MAJ`, `MIN`, `PNT+`, `PNT-`, `BLUS`, `DORN`, `PHRY`).
+
+### Fixed
+- **Smooth Aftertouch Strike Rejection & Per-Track `AT -> CUT`**:
+  - Added an asymmetric **75 ms attack / 25 ms release envelope follower** (`aftertouch_smooth_`), raised the strike deadzone to **25%** with a **quadratic curve**, moved `AT -> CUT` to non-destructive per-track SVF modulation, and cleared aftertouch on `all_notes_off()` so hard velocity-127 key strikes never spike vibrato/brightness/filter.
+- **Nyquist-Safe Max-Velocity FM Synthesis**:
+  - Added high-frequency Nyquist anti-aliasing rolloff for modulators, tightened the single-modulator index ceiling (`1.25` cycles), and added a soft saturating ceiling on summed `mod_sum` above `1.30` cycles to eliminate Bessel foldover/aliasing on hard strikes.
+- **BPM-Locked Arpeggiator Timing**:
+  - Fixed arpeggiator clock accumulation so note steps stay locked accurately to the sequencer BPM across all buffer sizes.
+
+---
+
 ## [0.2.1] — 2026-11-21
 
 **Package:** [`releases/v0.2.1/dx-zero_0.2.1-m5stack1_arm64.deb`](releases/v0.2.1/dx-zero_0.2.1-m5stack1_arm64.deb)
