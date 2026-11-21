@@ -12,6 +12,36 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ---
 
+## [0.2.0] — 2026-11-21
+
+**Package:** [`releases/v0.2.0/dx-zero_0.2.0-m5stack1_arm64.deb`](releases/v0.2.0/dx-zero_0.2.0-m5stack1_arm64.deb)
+**Checksums:** [`releases/v0.2.0/SHA256SUMS.txt`](releases/v0.2.0/SHA256SUMS.txt)
+**Target:** M5Stack CardputerZero (`arm64`, `APPLaunch`, LVGL 9.5, `320×170`)
+
+### Added
+- **5th Sequencer Sub-View: `SEQ → SMP` (Hybrid FM Drum Editor & On-Device WAV Sampler)**:
+  - Each of the 8 `DRM` pads (`P1 KICK .. P8 PERC`) can now switch between **`FM SYNTH`** (editable FM drum synthesis) and **`WAV SAMPLE`** (16-bit PCM mono/stereo `.wav` sampler).
+  - **Editable FM Drum Synthesis**: Per-pad **`FM Tune` (`-12..+12` semi)**, **`FM Decay` (`25%..250%`)**, **`FM Mod` (`0%..100%`)**, **`FM Noise` (`0%..100%`)**, **`Pad Gain` (`0%..150%`)**, and **`Choke Grp`** (e.g., Closed Hat cuts Open Hat).
+  - **WAV Sample Loader & Waveform Editor**: Load external 16-bit `.wav` samples from `~/.config/cardputerzero-dxzero/samples/`, view a live **48-bar waveform graph**, dial in **`Start Cut`** (teal cursor) and **`End Cut`** (magenta cursor), and destructively **`Crop/Save`** with anti-click edge fades.
+  - **On-Device Recording**:
+    - **`Rec Synth`**: Resample up to 2.5 s directly from DX Zero's live FM + FX output into any drum pad (auto-trimmed, normalized, and saved as `synth_padX.wav`).
+    - **`Rec Mic`**: Record up to 2.5 s from CardputerZero's built-in microphone (`ES8389-Audio`) or connected USB audio interface via ALSA capture with a live input level readout (saved as `mic_padX.wav`).
+  - Full 8-pad hybrid kit persistence in `~/.config/cardputerzero-dxzero/drum_kit.cfg`.
+- **Instant MIDI Panic (`Esc` Tap + `CC 120` / `CC 123`)**:
+  - Tapping **`Esc`** immediately triggers **MIDI Panic (`All Notes Off`)** (while holding `Esc` > 600 ms still saves & exits cleanly to `APPLaunch`).
+  - Added standard MIDI `CC 120` (*All Sound Off*) and `CC 123` (*All Notes Off*) support.
+- **Explicit Drum Pad MIDI Channel & Base Note (`MID` Tab)**:
+  - Added selectable **`Pad Ch`** (`Ch 10` default, `Ch 1..Ch 16`, `Any Ch`, or `Off (Keys)`) and **`Pad Base`** (`0..120`, default `36`) so drum pads stay completely isolated from keyboard notes on any controller (`DXZMIDI3` config).
+- **Per-Track Volume Readout & Live Mixing in `SEQ → PLY`**:
+  - Each of the 4 track lanes (`FM1`, `FM2`, `FM3`, `DRM`) now displays its independent volume (`V:xx%`), adjustable directly via `Z` / `C` while jamming.
+
+### Fixed
+- **Hanging / Stuck MIDI Notes**: Live keyboard `note_off` now releases matching live voices across all 3 FM tracks so switching tracks while holding keys never leaves a note hanging.
+- **Top-Velocity FM Tone Artifact**: Capped modulator velocity gain at `1.0×` at velocity `127` with a soft FM modulation index ceiling (`1.85`) to eliminate Bessel sideband foldover/aliasing on hard key strikes, plus added a `10%` Aftertouch strike deadzone (default `aftertouch_depth` lowered to `35%`).
+- **`Seq Mix` Volume on `DRM` Track**: Each drum voice now tracks `from_seq` and scales its live output directly by `(from_seq ? seq_mix : kbd_mix) * track_volume[3]` so `Seq Mix = 0%` cleanly silences sequenced drums while live pad/keyboard hits follow `Key Mix`.
+
+---
+
 ## [0.1.1] — 2026-11-20
 
 **Package:** [`releases/v0.1.1/dx-zero_0.1.1-m5stack1_arm64.deb`](releases/v0.1.1/dx-zero_0.1.1-m5stack1_arm64.deb)
