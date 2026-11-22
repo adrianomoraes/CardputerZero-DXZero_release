@@ -23,8 +23,15 @@
 
 Play it **100% standalone** right out of your pocket using the CardputerZero's built-in speaker/headphones and keyboard, or expand it into a full studio rig by plugging in **any class-compliant USB MIDI controller** and/or **any USB audio interface**.
 
-> **[IMAGE PLACEHOLDER: `assets/screenshot-hero.jpg`]**
-> *Replace with a photo of M5Stack CardputerZero running DX Zero.*
+<div align="center">
+
+| `PLY` — Live Performance (`FM0`) | `FM` — 6-OP DX7 Editor | `EXP` — Per-Instrument Expression |
+|:---:|:---:|:---:|
+| ![PLY Tab](docs/images/tab-ply.png) | ![FM Tab](docs/images/tab-fm.png) | ![EXP Tab](docs/images/tab-exp.png) |
+| **`SEQ` — 4-Track Groovebox** | **`FX` — Per-Instrument FX** | **`AUD` — Audio & Mixer** |
+| ![SEQ Tab](docs/images/tab-seq.png) | ![FX Tab](docs/images/tab-fx.png) | ![AUD Tab](docs/images/tab-aud.png) |
+
+</div>
 
 ---
 

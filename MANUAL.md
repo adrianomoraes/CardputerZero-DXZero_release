@@ -2,8 +2,7 @@
 
 **Version:** `0.3.0` | **Platform:** M5Stack CardputerZero (`320×170` LVGL 9.5) | **Author:** Adriano Dias Moraes
 
-> **[IMAGE PLACEHOLDER: `docs/images/manual-cover.jpg`]**
-> *Replace with a close-up photo of CardputerZero running DX Zero on the `PLY` dashboard.*
+![CardputerZero DX Zero — PLY Live Performance Dashboard](docs/images/tab-ply.png)
 
 ---
 
@@ -87,8 +86,7 @@ DX Zero is designed to be operated comfortably right on the CardputerZero's 56-k
 
 ## 3. Tab 1: `PLY` — Live Performance Dashboard
 
-> **[IMAGE PLACEHOLDER: `docs/images/manual-ply.png`]**
-> *Replace with a screenshot of the `PLY` tab showing a selected patch, active knob bars, and waveform scope.*
+![PLY Tab — Live Performance Dashboard](docs/images/tab-ply.png)
 
 The **`PLY`** tab is your main performance view. Every row on the left panel can be navigated with `Up` / `Down`, edited with `Left` / `Right`, and MIDI-Learned with `L`:
 
@@ -113,8 +111,7 @@ The **`PLY`** tab is your main performance view. Every row on the left panel can
 
 ## 4. Tab 2: `FM` — 6-Operator DX7 Sound Design
 
-> **[IMAGE PLACEHOLDER: `docs/images/manual-fm.png`]**
-> *Replace with a screenshot of the `FM` tab showing the 6 operator badges, DX7 parameters, and 4-bar operator EG graph.*
+![FM Tab — 6-Operator DX7 Sound Design](docs/images/tab-fm.png)
 
 The **`FM`** tab is dedicated cleanly to authentic 6-operator Yamaha DX7 programming.
 
@@ -138,8 +135,7 @@ The **`FM`** tab is dedicated cleanly to authentic 6-operator Yamaha DX7 program
 
 ## 5. Tab 3: `EXP` — ADSR, Velocity, Aftertouch, Mod Wheel & Pitch Bend
 
-> **[IMAGE PLACEHOLDER: `docs/images/manual-exp.png`]**
-> *Replace with a screenshot of the `EXP` tab showing the global ADSR bars, Velocity/Aftertouch/Mod Wheel rows, and live expression telemetry.*
+![EXP Tab — Per-Instrument ADSR, Velocity, Aftertouch & Mod Wheel](docs/images/tab-exp.png)
 
 All real-time performance expression controls live on their own dedicated **`EXP`** tab and are **recorded per instrument (per patch)** — switching between instruments preserves each sound's own ADSR, Velocity, Aftertouch, Mod Wheel, and Pitch Bend settings (saved automatically in `~/.config/cardputerzero-dxzero/expr/`):
 
@@ -165,8 +161,7 @@ All real-time performance expression controls live on their own dedicated **`EXP
 
 ## 6. Tab 4: `SEQ` — 5-View ORBIT + SLOOP Groovebox & Hybrid Drum Sampler
 
-> **[IMAGE PLACEHOLDER: `docs/images/manual-seq.png`]**
-> *Replace with a screenshot of the `SEQ` tab showing the 4-track color `PLY` view, live playheads, and on-screen transport controls.*
+![SEQ Tab — 4-Track Color PLY View & Transport](docs/images/tab-seq.png)
 
 Press **`V`** on the **`SEQ`** tab to cycle through five dedicated groovebox sub-views: **`PLY`** → **`GRD`** → **`STP`** → **`CLP`** → **`SMP`**.
 
@@ -240,8 +235,7 @@ To jam live on top of a running 4-track loop (including **both FM tracks and `DR
 
 ## 7. Tab 5: `FX` — Per-Instrument Filter, Chorus, Delay & Punch-In Effects
 
-> **[IMAGE PLACEHOLDER: `docs/images/manual-fx.png`]**
-> *Replace with a screenshot of the `FX` tab showing the active instrument FX badge, filter sliders, and Punch-In FX rows.*
+![FX Tab — Per-Instrument Filter, Chorus & Delay](docs/images/tab-fx.png)
 
 Just like Expression (`EXP`), **Filter, Chorus, Delay, and FX Wet Mix are recorded per instrument (per patch)** and saved automatically under `~/.config/cardputerzero-dxzero/expr/*.dxzfx` — the top badge displays which instrument's FX you're editing (`FM0 FX: ...`, `FM1 FX: ...`, etc.), and each FM track (`FM0`, `FM1`, `FM2`, `FM3`) runs its own independent per-track State-Variable Filter!
 
@@ -259,8 +253,7 @@ Just like Expression (`EXP`), **Filter, Chorus, Delay, and FX Wet Mix are record
 
 ## 8. Tab 6: `AUD` — Sound Cards, Seq/Key Mix, Volume & Stereo Diagnostics
 
-> **[IMAGE PLACEHOLDER: `docs/images/manual-aud.png`]**
-> *Replace with a screenshot of the `AUD` tab showing PipeWire USB selection, Seq/Key Mix bars, dual `L`/`R` VU meters, and `DSP:%` readout.*
+![AUD Tab — Sound Cards, Seq/Key Mix, Volume & Stereo Telemetry](docs/images/tab-aud.png)
 
 | Row | Option | Function |
 |---|---|---|
