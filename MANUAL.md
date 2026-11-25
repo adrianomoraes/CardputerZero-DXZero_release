@@ -1,6 +1,6 @@
 # CardputerZero DX Zero — Complete Operating Manual
 
-**Version:** `0.3.1` | **Platform:** M5Stack CardputerZero (`320×170` LVGL 9.5) | **Author:** Adriano Dias Moraes
+**Version:** `0.4.0` | **Platform:** M5Stack CardputerZero (`320×170` LVGL 9.5) | **Author:** Adriano Dias Moraes
 
 ![CardputerZero DX Zero — PLY Live Performance Dashboard](docs/images/tab-ply.png)
 

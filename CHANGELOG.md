@@ -12,6 +12,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ---
 
+## [0.4.0] - 2026-11-25
+
+### Added
+- **Headless Mode (`--headless`) & DAW Zero Hosting (`DAWZERO_HOSTED=1`)**:
+  - Runs the FM synth, sequencer, audio, and MIDI engines without opening LVGL/framebuffer UI so **DAW Zero** can host DXZero directly over PipeWire `dawzero_inst_bus`.
+  - When `DAWZERO_HOSTED=1`, forces `48000 Hz` / `256` frames on the `default` PipeWire sink, registers ALSA MIDI client as `"DXZero"` / `"DXZero IN"`, skips direct USB-MIDI auto-connect (preventing double-triggers with Alesis V61), and skips overwriting standalone config on exit.
+- **Live Control Export Protocol (`DAWZERO_CTRL_SOCK`)**:
+  - Exports 8 live controls directly into DAW Zero's `MID → 2:INST` subtab: `Bank`, `Instrument` (Patch), `Seq Track`, `Seq Pattern`, `Seq Play/Stop`, `Seq Rewind`, `FX Wet Mix`, and `Filter Cutoff`.
+
+---
+
 ## [0.3.1] — 2026-11-25
 
 **Package:** [`releases/v0.3.1/dx-zero_0.3.1-m5stack1_arm64.deb`](releases/v0.3.1/dx-zero_0.3.1-m5stack1_arm64.deb)
