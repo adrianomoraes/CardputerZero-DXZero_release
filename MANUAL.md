@@ -1,6 +1,6 @@
 # CardputerZero DX Zero — Complete Operating Manual
 
-**Version:** `0.3.0` | **Platform:** M5Stack CardputerZero (`320×170` LVGL 9.5) | **Author:** Adriano Dias Moraes
+**Version:** `0.3.1` | **Platform:** M5Stack CardputerZero (`320×170` LVGL 9.5) | **Author:** Adriano Dias Moraes
 
 ![CardputerZero DX Zero — PLY Live Performance Dashboard](docs/images/tab-ply.png)
 
@@ -104,7 +104,7 @@ The **`PLY`** tab is your main performance view. Every row on the left panel can
   - **`G:` Glissando (`OFF / FAST / MED / SLOW / GLID`)**: Smooth pitch glide (`25 ms` .. `450 ms`) between live notes.
   - **`C:` Auto-Chords (`OFF / MAJ / MIN / MAJ7 / MIN7 / DOM7 / SUS4 / PWR5`)**: Play rich multi-note chords from a single key (scale-aware!).
   - **`A:` Arpeggiator (`OFF / UP / DOWN / UPDN / RAND`)**: Tempo-synced 1/16th arpeggiator (works on `FM0` Live Jam & `FM1–FM3`; holding 1 key with a Scale active automatically arpeggiates a 4-note scale pattern!).
-  - **`S:` Musical Scale (`CHRM / MAJ / MIN / PNT+ / PNT- / BLUS / DORN / PHRY`)**: Quantizes live playing, Auto-Chords, and Arpeggiator notes cleanly into key.
+  - **`S:` Musical Scale & Key (`CHRM / MAJ / MIN / PNT+ / PNT- / BLUS / DORN / PHRY`, Keys `C..B`)**: Quantizes live playing, Auto-Chords, and Arpeggiator notes cleanly into key. Use `Z`/`C` (`←`/`→`) to pick the scale type, and **`Enter`** (or `Shift + Z/C`) to change the root key (`C`, `C#`, `D`, ..., `A#`, `B` — displayed as e.g. **`A#MAJ`**).
 - **Built-in QWERTY Mini-Keyboard**: On `PLY`, keys `Z S X D C V G B H N J M ,` play a chromatic octave right from the CardputerZero keyboard! Use `-` / `=` to adjust BPM.
 
 ---
@@ -153,7 +153,9 @@ All real-time performance expression controls live on their own dedicated **`EXP
 | 9 | **`ModWave`** | `SIN / TRI / SAW- / SAW+ / SQR / S&H` | Mod Wheel LFO waveform |
 | 10 | **`ModSpd`** | `0.2–18.0 Hz` | Mod Wheel LFO speed |
 | 11 | **`ModAmp`** | `0–100%` | Mod Wheel amplitude/depth (zero effect when wheel is at `0`) |
-| 12 | **`BendRng`** | `±1 .. ±12` | Pitch Bend wheel range in semitones (default `±2`) |
+| 12 | **`Mod Grp`** | `ALONE / ALL` | Mod Wheel scope: **`ALONE`** (active instrument only, default) or **`ALL`** (all FM tracks) |
+| 13 | **`BendRng`** | `±1 .. ±12` | Pitch Bend wheel range in semitones (default `±2`) |
+| 14 | **`Pit Grp`** | `ALONE / ALL` | Pitch Bend scope: **`ALONE`** (active instrument only, default) or **`ALL`** (all FM tracks) |
 
 *Tip: While on **`EXP`** (with `NAV` OFF), Alesis V61 Knobs `K1–K4` control **`Attack`, `Decay`, `Sustain`, `Release`** directly! The right panel shows a live 4-bar ADSR visualizer plus Mod Wheel, Aftertouch, and Sustain Pedal (`PED:ON/off`) indicators.*
 
@@ -243,11 +245,6 @@ Just like Expression (`EXP`), **Filter, Chorus, Delay, and FX Wet Mix are record
 - **Per-Instrument Stereo Chorus**: `Chorus Mix`, `Chorus Dep` (quadrature stereo modulation).
 - **Per-Instrument Tempo-Synced Ping-Pong Delay**: `Delay Mix`, `Delay Fdbk`, `Delay Div` (`1/16`, `1/8`, `3/16` dotted-8th, `1/4`).
 - **Per-Instrument Wet & Global Master Bus**: `FX Wet Mix` (per-instrument wet macro), `Master Vol` (`0–120%` global bus into the smooth C1 stereo bus limiter).
-- **OP-Style Punch-In FX** (`Enter` or `F1`–`F4` from any tab):
-  - **`PNCH Stut`**: Tempo-synced 1/16th beat-repeat stutter loop.
-  - **`PNCH Tape`**: Vinyl/tape slowdown pitch drop to zero.
-  - **`PNCH Crush`**: Lo-fi sample-rate & bit-depth decimation.
-  - **`PNCH HP`**: Rising resonant DJ high-pass sweep.
 
 ---
 

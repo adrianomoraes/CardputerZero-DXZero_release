@@ -12,6 +12,29 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ---
 
+## [0.3.1] — 2026-11-25
+
+**Package:** [`releases/v0.3.1/dx-zero_0.3.1-m5stack1_arm64.deb`](releases/v0.3.1/dx-zero_0.3.1-m5stack1_arm64.deb)
+**Checksums:** [`releases/v0.3.1/SHA256SUMS.txt`](releases/v0.3.1/SHA256SUMS.txt)
+**Target:** M5Stack CardputerZero (`arm64`, `APPLaunch`, LVGL 9.5, `320×170`)
+
+### Added
+- **3 Additional Bundled 32-Voice Yamaha DX7 `.syx` Banks (128 Instruments Total)**:
+  - Shipped **`DX7_ROM1A_Master.syx`** (classic 1983 DX7 Master Group), **`DX7_ROM2A_OrchPerc.syx`** (Orchestral & Percussive Group), and **`DX7_ROM3A_SynthFX.syx`** (Synth & Keys Group) alongside `dxzero_factory.syx` in `/usr/share/APPLaunch/share/banks/`.
+- **12-Key Scale Root Selector (`C..B`) on `PLY`**:
+  - Added root key selection (`C, C#, D, D#, E, F, F#, G, G#, A, A#, B`) to the `S:` scale pill on `PLY` (row 10): use `Z`/`C` (`←`/`→`) for scale type and **`Enter`** (or `Shift + Z/C`) for key root (displayed as e.g. `A#MAJ`). Auto-Chords and Arpeggiator automatically follow the selected key.
+- **Per-Track Mod Wheel & Pitch Bend Scope (`EXP` Tab)**:
+  - Added **`Mod Grp`** (`ALONE` / `ALL`) and **`Pit Grp`** (`ALONE` / `ALL`) in the `EXP` tab (default **`ALONE`**) so live Pitch Bend and Mod Wheel on `FM0` (or any selected track) don't unintentionally bend or wobble running sequencer tracks.
+
+### Changed
+- **Streamlined `FX` Tab**: Removed the 4 legacy `PNCH` rows from the `FX` tab, leaving a clean 10-row per-instrument Filter / Chorus / Delay / Wet / Master Vol list.
+
+### Fixed
+- **Per-Track SVF Audio Crackling & Glissando Zippering**:
+  - Fixed a filter integrator discontinuity when sequenced and live keyboard voices played simultaneously on the same track by mixing both streams before running the per-track Cytomic SVF once, reset stale filter state on silent tracks, and moved glissando frequency interpolation into the 8-sample control block (`kCtrlBlock`).
+
+---
+
 ## [0.3.0] — 2026-11-21
 
 **Package:** [`releases/v0.3.0/dx-zero_0.3.0-m5stack1_arm64.deb`](releases/v0.3.0/dx-zero_0.3.0-m5stack1_arm64.deb)
