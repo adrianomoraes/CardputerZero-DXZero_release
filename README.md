@@ -8,7 +8,7 @@
 
 *Created by **Adriano Dias Moraes***
 
-[![Latest Release](https://img.shields.io/badge/Release-v0.4.0-00E5B0?style=for-the-badge)](releases/v0.4.0/dx-zero_0.4.0-m5stack1_arm64.deb)
+[![Latest Release](https://img.shields.io/badge/Release-v0.4.1-00E5B0?style=for-the-badge)](releases/v0.4.1/dx-zero_0.4.1-m5stack1_arm64.deb)
 [![Platform](https://img.shields.io/badge/Platform-M5Stack%20CardputerZero%20(ARM64)-FF6B2B?style=for-the-badge)](#installation)
 [![Manual](https://img.shields.io/badge/User%20Manual-MANUAL.md-00D4FF?style=for-the-badge)](MANUAL.md)
 [![Changelog](https://img.shields.io/badge/Changelog-CHANGELOG.md-FFB020?style=for-the-badge)](CHANGELOG.md)
@@ -39,6 +39,7 @@ Play it **100% standalone** right out of your pocket using the CardputerZero's b
 
 | Version | Release Date | Package (ARM64 Debian) | Checksum | Notes |
 |---|---|---|---|---|
+| **`v0.4.1`** | 2026-11-25 | [`dx-zero_0.4.1-m5stack1_arm64.deb`](releases/v0.4.1/dx-zero_0.4.1-m5stack1_arm64.deb) | [`SHA256SUMS.txt`](releases/v0.4.1/SHA256SUMS.txt) | **DAW Zero Project BPM Auto-Sync** (`Sync DAW BPM` toggle ON by default over `DAWZERO_CTRL_SOCK`) — auto-locks DXZero's sequencer & tempo-synced FX to DAW Zero's project BPM — see [CHANGELOG.md](CHANGELOG.md) |
 | **`v0.4.0`** | 2026-11-25 | [`dx-zero_0.4.0-m5stack1_arm64.deb`](releases/v0.4.0/dx-zero_0.4.0-m5stack1_arm64.deb) | [`SHA256SUMS.txt`](releases/v0.4.0/SHA256SUMS.txt) | **Headless Mode (`--headless`)** for **DAW Zero** hosting (`48 kHz` PipeWire `INST BUS`, MIDI auto-connect guard) & **8 live exported controls** (`Bank`, `Instrument`, `Seq Track`, `Pattern`, `Play/Stop`, `Rewind`, `FX Mix`, `Cutoff`) via `DAWZERO_CTRL_SOCK` — see [CHANGELOG.md](CHANGELOG.md) |
 | **`v0.3.1`** | 2026-11-25 | [`dx-zero_0.3.1-m5stack1_arm64.deb`](releases/v0.3.1/dx-zero_0.3.1-m5stack1_arm64.deb) | [`SHA256SUMS.txt`](releases/v0.3.1/SHA256SUMS.txt) | 3 new classic 32-voice DX7 `.syx` banks (128 instruments total), 12-key Scale Root (`C..B`), `EXP` `Mod Grp`/`Pit Grp` (`ALONE`/`ALL`), streamlined `FX` tab & SVF audio crackle fix — see [CHANGELOG.md](CHANGELOG.md) |
 | **`v0.3.0`** | 2026-11-21 | [`dx-zero_0.3.0-m5stack1_arm64.deb`](releases/v0.3.0/dx-zero_0.3.0-m5stack1_arm64.deb) | [`SHA256SUMS.txt`](releases/v0.3.0/SHA256SUMS.txt) | `FM0` dedicated live-jam slot, per-instrument FX (`PatchFx` + per-track SVF), `PLY` Glissando / Auto-Chords / BPM-locked Arp / Scales, smooth aftertouch & Nyquist-safe max-vel FM — see [CHANGELOG.md](CHANGELOG.md) |
@@ -56,20 +57,20 @@ No compiler or build tools required. Install the prebuilt ARM64 `.deb` package d
 ### Option 1: Install Directly on CardputerZero
 Download the `.deb` package to your CardputerZero and run:
 ```bash
-sudo apt install -y ./dx-zero_0.4.0-m5stack1_arm64.deb
+sudo apt install -y ./dx-zero_0.4.1-m5stack1_arm64.deb
 ```
 
 ### Option 2: Install Remotely Over SSH (from macOS / Linux / Windows)
 ```bash
-scp releases/v0.4.0/dx-zero_0.4.0-m5stack1_arm64.deb <user>@<cardputer-ip>:/tmp/
-ssh <user>@<cardputer-ip> "sudo apt install -y /tmp/dx-zero_0.4.0-m5stack1_arm64.deb"
+scp releases/v0.4.1/dx-zero_0.4.1-m5stack1_arm64.deb <user>@<cardputer-ip>:/tmp/
+ssh <user>@<cardputer-ip> "sudo apt install -y /tmp/dx-zero_0.4.1-m5stack1_arm64.deb"
 ```
 
 After installation, **DX Zero** appears automatically in the CardputerZero **`APPLaunch`** launcher with its custom icon.
 
 ### Verify Package Integrity (Optional)
 ```bash
-cd releases/v0.4.0
+cd releases/v0.4.1
 sha256sum -c SHA256SUMS.txt
 ```
 

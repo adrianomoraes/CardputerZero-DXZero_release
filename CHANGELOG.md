@@ -12,6 +12,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ---
 
+## [0.4.1] - 2026-11-25
+
+### Added
+- **DAW Zero Project BPM Auto-Sync (`Sync DAW BPM` Toggle)**:
+  - Exported a 9th live control (`bpm_sync`, **ON by default**) over `DAWZERO_CTRL_SOCK` and handled incoming `BPM|<val>` updates from DAW Zero so DXZero's sequencer and tempo-synced FX automatically lock to the DAW project tempo (or can be toggled `OFF` for independent tempo).
+
+---
+
 ## [0.4.0] - 2026-11-25
 
 ### Added
